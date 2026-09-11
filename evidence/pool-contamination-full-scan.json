@@ -1,0 +1,998 @@
+{
+  "scanTimestamp": "2026-09-10T13:34:09.195Z",
+  "blockNumber": 484739551,
+  "chainId": 50312,
+  "totalMarketsScanned": 100,
+  "totalRecycledPoolsFound": 18,
+  "stats": {
+    "minContaminationPct": 50,
+    "maxContaminationPct": 90,
+    "meanContaminationPct": 74.49,
+    "medianContaminationPct": 77.5,
+    "crossAssetContaminatedPools": 18,
+    "crossAssetPct": 100
+  },
+  "pools": [
+    {
+      "poolAddress": "0xcb9ce35fba1329e22c4dc3e4ff93acd9c0a2ae2f",
+      "marketCount": 10,
+      "markets": [
+        {
+          "marketId": "0x00000000000000000000000000000000000000000000000000000000000191fe",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045200,
+          "expiry": 1789045260
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001920b",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045440,
+          "expiry": 1789045500
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001921d",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045800,
+          "expiry": 1789045860
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019224",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045920,
+          "expiry": 1789045980
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019227",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046040,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001923b",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046400,
+          "expiry": 1789046460
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019241",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046520,
+          "expiry": 1789046580
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019248",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046700,
+          "expiry": 1789047000
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789047060,
+          "expiry": 1789047120
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+          "symbol": "ETH 60s",
+          "status": "Trading",
+          "tradingStart": 1789047180,
+          "expiry": 1789047240
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+      "activeSymbol": "ETH 60s",
+      "totalMarketWindowsIngested": 10,
+      "foreignMarketWindows": 9,
+      "contaminationRatePct": 90,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0xfa77b643c3a7346bd9148c7ea0246d929d091473",
+      "marketCount": 10,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019206",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045260,
+          "expiry": 1789045320
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001920c",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045440,
+          "expiry": 1789045500
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019214",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045560,
+          "expiry": 1789045620
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019217",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045680,
+          "expiry": 1789045740
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001921c",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045800,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019231",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046160,
+          "expiry": 1789046220
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019236",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046280,
+          "expiry": 1789046340
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019239",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046400,
+          "expiry": 1789046700
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019258",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789047000,
+          "expiry": 1789047060
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925f",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789047120,
+          "expiry": 1789047180
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001925f",
+      "activeSymbol": "BTC 60s",
+      "totalMarketWindowsIngested": 10,
+      "foreignMarketWindows": 9,
+      "contaminationRatePct": 90,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0x65fb38bafb87c0b6e6ada0c0eb15dc1fa3715766",
+      "marketCount": 10,
+      "markets": [
+        {
+          "marketId": "0x00000000000000000000000000000000000000000000000000000000000191fb",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045200,
+          "expiry": 1789045500
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001921e",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045800,
+          "expiry": 1789045860
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019223",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045920,
+          "expiry": 1789045980
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019228",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046040,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019232",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046160,
+          "expiry": 1789046220
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019235",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046280,
+          "expiry": 1789046340
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001923a",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046400,
+          "expiry": 1789046700
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001924d",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046760,
+          "expiry": 1789046820
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019252",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046880,
+          "expiry": 1789046940
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019255",
+          "symbol": "BTC 300s",
+          "status": "Trading",
+          "tradingStart": 1789047000,
+          "expiry": 1789047300
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019255",
+      "activeSymbol": "BTC 300s",
+      "totalMarketWindowsIngested": 10,
+      "foreignMarketWindows": 9,
+      "contaminationRatePct": 90,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0x5397cd6de6e87eb7f2d9b72191b5effb16e53d62",
+      "marketCount": 9,
+      "markets": [
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001920a",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045380,
+          "expiry": 1789045440
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001920e",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045500,
+          "expiry": 1789045800
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019221",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045860,
+          "expiry": 1789045920
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019226",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045980,
+          "expiry": 1789046040
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019229",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789046400
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019243",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046580,
+          "expiry": 1789046640
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019249",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046700,
+          "expiry": 1789046760
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019250",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046820,
+          "expiry": 1789046880
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019253",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046940,
+          "expiry": 1789047000
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019253",
+      "activeSymbol": "BTC 60s",
+      "totalMarketWindowsIngested": 9,
+      "foreignMarketWindows": 8,
+      "contaminationRatePct": 88.89,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0xd59f5081e9cdeabd8cb8e82a905c20b33a7c81c8",
+      "marketCount": 9,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019207",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045320,
+          "expiry": 1789045380
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019210",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045500,
+          "expiry": 1789045560
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019215",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045620,
+          "expiry": 1789045680
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001921a",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045740,
+          "expiry": 1789045800
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019222",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045860,
+          "expiry": 1789045920
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019225",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045980,
+          "expiry": 1789046040
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001922a",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789046400
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001923f",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046460,
+          "expiry": 1789046520
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019247",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046700,
+          "expiry": 1789047000
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019247",
+      "activeSymbol": "BTC 300s",
+      "totalMarketWindowsIngested": 9,
+      "foreignMarketWindows": 8,
+      "contaminationRatePct": 88.89,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0xe77db3e03a24a8a01eadfbb64aaeed34e533cd09",
+      "marketCount": 7,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019205",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045260,
+          "expiry": 1789045320
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019244",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046580,
+          "expiry": 1789046640
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001924a",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046700,
+          "expiry": 1789046760
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001924f",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046820,
+          "expiry": 1789046880
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019254",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046940,
+          "expiry": 1789047000
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925e",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789047060,
+          "expiry": 1789047120
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019261",
+          "symbol": "BTC 60s",
+          "status": "Trading",
+          "tradingStart": 1789047180,
+          "expiry": 1789047240
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019261",
+      "activeSymbol": "BTC 60s",
+      "totalMarketWindowsIngested": 7,
+      "foreignMarketWindows": 6,
+      "contaminationRatePct": 85.71,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0x230f5ce9bf56e20a891847c3d4e597f2623b7bc6",
+      "marketCount": 7,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019213",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045560,
+          "expiry": 1789045620
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019216",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045620,
+          "expiry": 1789045680
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019219",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045740,
+          "expiry": 1789045800
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001922b",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789046160
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019234",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046220,
+          "expiry": 1789046280
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019237",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046340,
+          "expiry": 1789046400
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019242",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046520,
+          "expiry": 1789046580
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019242",
+      "activeSymbol": "ETH 60s",
+      "totalMarketWindowsIngested": 7,
+      "foreignMarketWindows": 6,
+      "contaminationRatePct": 85.71,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0x07b5798a738dfeaae6ec45d99a5e71792057b573",
+      "marketCount": 6,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019208",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045320,
+          "expiry": 1789045380
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001920d",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045500,
+          "expiry": 1789045800
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001922c",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789046160
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019233",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046220,
+          "expiry": 1789046280
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019238",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046340,
+          "expiry": 1789046400
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019240",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046460,
+          "expiry": 1789046520
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019240",
+      "activeSymbol": "ETH 60s",
+      "totalMarketWindowsIngested": 6,
+      "foreignMarketWindows": 5,
+      "contaminationRatePct": 83.33,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0xee566931090fec48cb3746f0b44f4fd6e561a2e5",
+      "marketCount": 5,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019209",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045380,
+          "expiry": 1789045440
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001920f",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045500,
+          "expiry": 1789045560
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019218",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045680,
+          "expiry": 1789045740
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001921b",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045800,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001923c",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046400,
+          "expiry": 1789046460
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001923c",
+      "activeSymbol": "ETH 60s",
+      "totalMarketWindowsIngested": 5,
+      "foreignMarketWindows": 4,
+      "contaminationRatePct": 80,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0xa4c141cc26fe1a4d782369c8f691c7eeed5d2702",
+      "marketCount": 4,
+      "markets": [
+        {
+          "marketId": "0x00000000000000000000000000000000000000000000000000000000000191fd",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789045200,
+          "expiry": 1789045260
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019245",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046640,
+          "expiry": 1789046700
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019257",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789047000,
+          "expiry": 1789047060
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019260",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789047120,
+          "expiry": 1789047180
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019260",
+      "activeSymbol": "ETH 60s",
+      "totalMarketWindowsIngested": 4,
+      "foreignMarketWindows": 3,
+      "contaminationRatePct": 75,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0x28dd287412281e5986bc7b78ecc69ac16c4977ad",
+      "marketCount": 4,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019204",
+          "symbol": "ETH 298s",
+          "status": "Resolved",
+          "tradingStart": 1789045202,
+          "expiry": 1789045500
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019220",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045800,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001923e",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046400,
+          "expiry": 1789046700
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019259",
+          "symbol": "BTC 900s",
+          "status": "Trading",
+          "tradingStart": 1789047000,
+          "expiry": 1789047900
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019259",
+      "activeSymbol": "BTC 900s",
+      "totalMarketWindowsIngested": 4,
+      "foreignMarketWindows": 3,
+      "contaminationRatePct": 75,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0x7bd3291daa3c50aba21808162417f1b217ec3375",
+      "marketCount": 4,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019246",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046640,
+          "expiry": 1789046700
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001924e",
+          "symbol": "ETH 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046760,
+          "expiry": 1789046820
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019251",
+          "symbol": "BTC 60s",
+          "status": "Resolved",
+          "tradingStart": 1789046880,
+          "expiry": 1789046940
+        },
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019256",
+          "symbol": "ETH 300s",
+          "status": "Trading",
+          "tradingStart": 1789047000,
+          "expiry": 1789047300
+        }
+      ],
+      "activeMarketId": "0x0000000000000000000000000000000000000000000000000000000000019256",
+      "activeSymbol": "ETH 300s",
+      "totalMarketWindowsIngested": 4,
+      "foreignMarketWindows": 3,
+      "contaminationRatePct": 75,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0xf373702516a347137be48aaf6c14b2e4d1a4df90",
+      "marketCount": 3,
+      "markets": [
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001921f",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045800,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001923d",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046400,
+          "expiry": 1789046700
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925a",
+          "symbol": "ETH 900s",
+          "status": "Trading",
+          "tradingStart": 1789047000,
+          "expiry": 1789047900
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001925a",
+      "activeSymbol": "ETH 900s",
+      "totalMarketWindowsIngested": 3,
+      "foreignMarketWindows": 2,
+      "contaminationRatePct": 66.67,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0xf4955339796f692e59b94777afa57cb77fa153ab",
+      "marketCount": 3,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019203",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045200,
+          "expiry": 1789045500
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001922f",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789046400
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001924c",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046700,
+          "expiry": 1789047000
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001924c",
+      "activeSymbol": "ETH 300s",
+      "totalMarketWindowsIngested": 3,
+      "foreignMarketWindows": 2,
+      "contaminationRatePct": 66.67,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    {
+      "poolAddress": "0x6f172ef124a72a4b6f5d1ebc88721c44b382928d",
+      "marketCount": 2,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019202",
+          "symbol": "ETH 900s",
+          "status": "Resolved",
+          "tradingStart": 1789045200,
+          "expiry": 1789046100
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925b",
+          "symbol": "BTC 300s",
+          "status": "Trading",
+          "tradingStart": 1789047000,
+          "expiry": 1789047300
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001925b",
+      "activeSymbol": "BTC 300s",
+      "totalMarketWindowsIngested": 2,
+      "foreignMarketWindows": 1,
+      "contaminationRatePct": 50,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0x63632b83fc46932767b8816d6d7ba1cefd2490ff",
+      "marketCount": 2,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019230",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789046400
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001924b",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789046700,
+          "expiry": 1789047000
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001924b",
+      "activeSymbol": "BTC 300s",
+      "totalMarketWindowsIngested": 2,
+      "foreignMarketWindows": 1,
+      "contaminationRatePct": 50,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0x4abb885682402039a5d50b542ad30ae305898963",
+      "marketCount": 2,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019212",
+          "symbol": "ETH 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045500,
+          "expiry": 1789045800
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001922d",
+          "symbol": "BTC 900s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789047000
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001922d",
+      "activeSymbol": "BTC 900s",
+      "totalMarketWindowsIngested": 2,
+      "foreignMarketWindows": 1,
+      "contaminationRatePct": 50,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "ETH",
+        "BTC"
+      ]
+    },
+    {
+      "poolAddress": "0x69e62a394ee036ffdc867e2c7d689d5b65144a80",
+      "marketCount": 2,
+      "markets": [
+        {
+          "marketId": "0x0000000000000000000000000000000000000000000000000000000000019211",
+          "symbol": "BTC 300s",
+          "status": "Resolved",
+          "tradingStart": 1789045500,
+          "expiry": 1789045800
+        },
+        {
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001922e",
+          "symbol": "ETH 900s",
+          "status": "Resolved",
+          "tradingStart": 1789046100,
+          "expiry": 1789047000
+        }
+      ],
+      "activeMarketId": "0x000000000000000000000000000000000000000000000000000000000001922e",
+      "activeSymbol": "ETH 900s",
+      "totalMarketWindowsIngested": 2,
+      "foreignMarketWindows": 1,
+      "contaminationRatePct": 50,
+      "crossAssetContamination": true,
+      "assetsSpanned": [
+        "BTC",
+        "ETH"
+      ]
+    }
+  ]
+}

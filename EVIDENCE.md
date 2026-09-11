@@ -31,8 +31,13 @@ This document records the empirical evidence captured live on **Somnia Shannon T
 ## 2. Observed Recycled Pools Anomaly
 
 A scan of 100 markets on-chain revealed **18 recycled pool contracts** shared across multiple rolling market windows.
+- **Contamination Rate Spread**: **50.00%** (min) to **90.00%** (max) across historical market windows.
+- **Mean Contamination Rate**: **74.49%** (Median: **77.50%**).
+- **Cross-Asset Exposure**: **18 of 18 (100.0%)** recycled pools spanned both BTC and ETH rolling markets.
+- **Full Dataset**: [`evidence/pool-contamination-full-scan.json`](evidence/pool-contamination-full-scan.json)
+- **Adversarial Stress Log**: [`evidence/stress-history.md`](evidence/stress-history.md)
 
-### Recycled Pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f`
+### Worked Instance: Recycled Pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f`
 Shared across **10 distinct market instances** spanning different assets (BTC and ETH) and temporal cadences:
 
 | marketId | symbol | start | expiry | on-chain status |

@@ -59,24 +59,28 @@ unsafe execution
 
 ### Quantified Financial Stakes: The Cost of Contamination
 
-When cross-window contamination goes undetected in automated trading pipelines, the cost is immediate and quantifiable:
+The metrics below distinguish between empirical values read directly from on-chain scans and benchmark test runs (`[MEASURED]`) and scenario extrapolations (`[ILLUSTRATIVE]`). Measured figures link directly to their source script and raw JSON artifact.
 
-| Vulnerability Vector | Contaminated Baseline Impact | Clean EPOCHLINE Context | Real Capital / Risk Consequence |
-|---|---|---|---|
-| **Price Signal Distortion** | **0.48** (distorted by foreign BTC fills) | **0.64** (clean ETH order flow) | **1,600 bps (25%) pricing error** on binary 0/1 outcomes |
-| **Adverse Selection / Arbitrage** | Quoting at 0.48 against 0.64 fair value | Quotes locked to target market epoch | **16¢ per contract leakage** directly captured by toxic arbitrageurs |
-| **Inventory Loss on \$10k Position** | Leaks ~\$1,600 per 60s window | Protected execution boundary | **16% instantaneous portfolio drawdown** in automated market-making |
-| **Cross-Asset Volatility Bleed** | BTC volatility injected into ETH market | Enforces exact asset + venue binding | **100% collateral loss** on directional positions expiring out-of-the-money |
+| Vulnerability Vector | Contaminated Baseline Impact | Clean EPOCHLINE Context | Real Capital / Risk Consequence | Data Source & Provenance |
+|---|---|---|---|---|
+| **Price Signal Distortion** | `[MEASURED]` **0.48** (distorted by foreign BTC fills) | `[MEASURED]` **0.64** (clean ETH order flow) | `[MEASURED]` **1,600 bps (-25.00%) pricing distortion** on binary 0/1 outcomes | [`scripts/run-controls.ts`](scripts/run-controls.ts), [`evidence/summary.json`](evidence/summary.json) |
+| **Adverse Selection Leakage** | `[MEASURED]` Quoting at 0.48 against 0.64 fair value | `[MEASURED]` Quotes locked to target market epoch | `[MEASURED]` **16.00¢ / contract arbitrage leakage** captured by toxic flow | [`evidence/summary.json`](evidence/summary.json), [`evidence/receipts/decision-receipt-valid.json`](evidence/receipts/decision-receipt-valid.json) |
+| **Inventory Loss on \$10k Position** | `[ILLUSTRATIVE]` Leaks ~\$1,600 per contaminated 60s window | `[MEASURED]` Protected execution boundary | `[ILLUSTRATIVE]` **16.00% portfolio drawdown** if standard \$10k quoting book fills at distorted quote | Extrapolated from measured 16¢/contract leakage |
+| **Cross-Asset Volatility Bleed** | `[MEASURED]` BTC volatility injected into ETH market | `[MEASURED]` Enforces exact asset + venue binding | `[ILLUSTRATIVE]` **100.00% collateral loss** on directional positions expiring out-of-the-money | Worked example for binary contract payoff ($0.00 expiry) |
 
 ## The Discovery
 
 EPOCHLINE began with a live protocol probe, not a synthetic hypothesis.
 
-### Empirical Testnet Scan & Real Pool Contamination
+### Empirical Testnet Scan & Full 18-Pool Contamination Distribution
 
-A live on-chain scan of 100 markets on **Somnia Shannon Testnet** (Chain ID `50312`, Block `#484739551`) revealed **18 recycled pool contracts** actively reused across successive rolling market epochs.
+Across the full on-chain scan of 100 markets on **Somnia Shannon Testnet** (Chain ID `50312`, Block `#484739551`), **18 recycled pool contracts** were identified and measured:
+- **Contamination Rate Spread**: **50.00%** (min) to **90.00%** (max) across historical market windows.
+- **Mean Contamination Rate**: **74.49%** (Median: **77.50%**).
+- **Cross-Asset Recycled Pools**: **18 of 18 (100.0%)** recycled pools spanned both BTC and ETH rolling markets.
+- **Full 18-Pool Scan Dataset**: [`evidence/pool-contamination-full-scan.json`](evidence/pool-contamination-full-scan.json)
 
-Specifically, recycled pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f` was mapped across **10 distinct market instances** spanning different assets (BTC and ETH) and durations (60s and 300s):
+The table below details one representative worked instance from this 18-pool measurement — recycled pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f` spanning 10 rolling market instances:
 
 | marketId | symbol | start | expiry | on-chain status |
 |---|---|---:|---:|---|
@@ -88,13 +92,13 @@ Specifically, recycled pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f` was map
 
 When running a standard pool-keyed query (`readPoolHistory`) across this live pool contract:
 - **Total Ingested Rows**: 20 rows
-- **Retained Foreign Rows**: 10 rows (**50% contamination rate** from prior resolved BTC markets)
-- **Signal Drift**: Skewed momentum price by **-25%** (from 0.64 to 0.48)
+- **Retained Foreign Rows**: 10 rows (**50.00% window contamination rate** from prior resolved BTC markets)
+- **Signal Drift**: Skewed momentum price by **-25.00%** (from 0.64 to 0.48)
 - **Baseline Verdict**: `ACCEPTED (VULNERABLE)` — the unshielded pipeline had no way to detect the foreign rows.
 
 > **The pool is infrastructure. The market instance is identity.**
 
-See [`DISCOVERY.md`](DISCOVERY.md) and [`evidence/`](evidence/).
+See [`DISCOVERY.md`](DISCOVERY.md), [`evidence/pool-contamination-full-scan.json`](evidence/pool-contamination-full-scan.json), and [`evidence/`](evidence/).
 
 ## The Solution
 
@@ -202,17 +206,18 @@ EPOCHLINE provides a complete before-and-after audit trail connecting evidence e
 
 ## Adversarial Tests
 
-| Attack | Expected result | Test Status |
-|---|---|---|
-| Reused-pool contamination | **REFUSED** | **PASSED** (`tests/contamination.spec.ts`) |
-| Cross-market injection | **REFUSED** | **PASSED** (`tests/contamination.spec.ts`) |
-| Cross-asset evidence | **REFUSED** | **PASSED** (`tests/contamination.spec.ts`) |
-| Out-of-window evidence | **REFUSED** | **PASSED** (`tests/contamination.spec.ts`) |
-| Missing provenance | **REFUSED** | **PASSED** (`tests/contamination.spec.ts`) |
-| Receipt replay | **REFUSED** | **PASSED** (`tests/replay.spec.ts`) |
-| Successor-market reuse | **REFUSED** | **PASSED** (`tests/toctou.spec.ts`) |
-| Market locks before execution | **REFUSED** | **PASSED** (`tests/toctou.spec.ts`) |
-| Receipt / Intent tampering | **DETECTED** | **PASSED** (`tests/replay.spec.ts`) |
+| Attack / Stress Vector | Expected Result | Test Status | Evidence & Test Suite |
+|---|---|---|---|
+| **Reused-pool contamination** | **REFUSED** | **PASSED** | [`tests/contamination.spec.ts`](tests/contamination.spec.ts) |
+| **Cross-market injection** | **REFUSED** | **PASSED** | [`tests/contamination.spec.ts`](tests/contamination.spec.ts) |
+| **Cross-asset evidence** | **REFUSED** | **PASSED** | [`tests/contamination.spec.ts`](tests/contamination.spec.ts) |
+| **Out-of-window evidence** | **REFUSED** | **PASSED** | [`tests/contamination.spec.ts`](tests/contamination.spec.ts) |
+| **Missing provenance / timestamp** | **REFUSED** | **PASSED** | [`evidence/stress-history.md`](evidence/stress-history.md) |
+| **Receipt replay across epochs** | **REFUSED** | **PASSED** | [`tests/replay.spec.ts`](tests/replay.spec.ts) |
+| **Successor-market reuse** | **REFUSED** | **PASSED** | [`tests/toctou.spec.ts`](tests/toctou.spec.ts) |
+| **Market locks before execution** | **REFUSED** | **PASSED** | [`tests/toctou.spec.ts`](tests/toctou.spec.ts) |
+| **Receipt / Intent tampering** | **DETECTED** | **PASSED** | [`tests/replay.spec.ts`](tests/replay.spec.ts) |
+| **Exact boundary millisecond tests** | **VERIFIED** | **PASSED** | [`scripts/stress-boundary-test.ts`](scripts/stress-boundary-test.ts) |
 
 ## Architecture
 
@@ -267,6 +272,8 @@ DreamDEX's current architecture explicitly requires on-chain status checks befor
 ```bash
 npm run test
 npm run verify:evidence
+npx tsx scripts/analyze-all-pools.ts
+npx tsx scripts/stress-boundary-test.ts
 npm run test:e2e
 npm run typecheck
 npm run lint
@@ -277,13 +284,14 @@ Every empirical claim should resolve to an evidence file, a reproducible command
 
 ## Honest Limits
 
-EPOCHLINE’s security model is defined around concrete boundary conditions and empirical break tests rather than generic disclaimers:
+EPOCHLINE’s security model is defined around concrete boundary conditions and empirical break tests rather than generic disclaimers (see [`evidence/stress-history.md`](evidence/stress-history.md)):
 
 ### Grounded Boundary Stress Tests
 1. **Cross-Epoch TOCTOU Replay**: When pool `0xCb9c...` recycles from Market A (ETH 60s) to Market B (BTC 60s), attempting to execute Market A's valid receipt on Market B fails closed via `verifyExecutionSeal` (`Market ID mismatch`).
 2. **Order Expiry Overrun**: If an execution intent has an order expiry beyond the target market window ($t_{\text{order}} > t_{\text{expiry}}$), the preflight throws and aborts before signature.
 3. **Payload & Parameter Tampering**: Bit-level changes to $H_E$, mutating decision actions post-hash (e.g. `BUY_YES` $\to$ `BUY_NO`), or altering order size (e.g. `10` $\to$ `100`) deterministically fail cryptographic verification.
-4. **Control Ineffectiveness**: Randomly subsampling pool rows fails (leaves 50% foreign contamination); deterministic identity-scoping is mathematically necessary.
+4. **Boundary Millisecond Scoping**: Tests at $t_{\text{start}}-1$ and $t_{\text{expiry}}+1$ confirm exact inclusive intervals without off-by-one boundary leaks.
+5. **Control Ineffectiveness**: Randomly subsampling pool rows fails (leaves 50% foreign contamination); deterministic identity-scoping is mathematically necessary.
 
 ### Architectural Boundary & Non-Claims
 - **What EPOCHLINE Guarantees**: A decision context is mathematically bounded to the canonical `marketId`, registered venue/pool binding, and active temporal interval, with a verifiable cryptographic receipt anchored to the executed transaction.

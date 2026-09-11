@@ -44,8 +44,17 @@ Captured live from Somnia Shannon Testnet (Chain ID 50312) at Block `#484739551`
 - **oracleQuestionId**: `0x0000000000000000000000000000000000000000000000000000000000019262`
 - **capturedAtBlock**: `484739551`
 
-### Same-Pool Recycled Historical Instances
-Pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f` has been recycled across **10 distinct market instances**:
+### 18-Pool Empirical Contamination Distribution
+
+Across the full on-chain scan of 100 markets on Somnia Shannon Testnet at Block `#484739551`, **18 recycled pools** were identified and measured:
+- **Contamination Rate Spread**: **50.00%** (min) to **90.00%** (max)
+- **Mean Contamination Rate**: **74.49%**
+- **Median Contamination Rate**: **77.50%**
+- **Cross-Asset Contamination**: **18 of 18 (100.0%)** recycled pools spanned both BTC and ETH rolling markets.
+- **Full Dataset**: [`evidence/pool-contamination-full-scan.json`](evidence/pool-contamination-full-scan.json)
+
+### Worked Instance: Recycled Pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f`
+Pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f` represents a concrete instance from this distribution, recycled across **10 distinct market instances**:
 
 | marketId | symbol | start | expiry | on-chain status |
 |---|---|---:|---:|---|
@@ -65,14 +74,14 @@ Pool `0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f` has been recycled across **10 
 - **Query scope**: Pool-wide (unconstrained by `marketId`)
 - **Number of distinct market instances sharing pool**: 10 markets
 - **Contamination hazard**: Fills and volume metrics from 9 prior resolved markets (spanning both BTC and ETH) bleed into the active ETH 60s decision context.
-- **Evidence file**: `evidence/discovery-probe.json`
+- **Evidence file**: [`evidence/discovery-probe.json`](evidence/discovery-probe.json)
 
 ### Correctly Scoped Result
 - **Query**: `readMarketHistory(identity)` via EPOCHLINE Scope Gate
-- **Scoping criteria**: `marketId == 0x00...019262` AND `timestamp ? [1789047180, 1789047240]`
+- **Scoping criteria**: `marketId == 0x00...019262` AND `timestamp ∈ [1789047180, 1789047240]`
 - **Retained rows**: Strictly rows belonging to the active `marketId`
 - **Rejected foreign rows**: Formally flagged and rejected with provenance tags
-- **Evidence file**: `evidence/discovery-probe.json`
+- **Evidence file**: [`evidence/discovery-probe.json`](evidence/discovery-probe.json)
 
 ---
 

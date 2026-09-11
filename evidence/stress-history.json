@@ -1,0 +1,84 @@
+[
+  {
+    "vector": "MISSING_TIMESTAMP_TIME_SERIES",
+    "description": "Adversary injects fill matching marketId and poolAddress but omits timestamp to evade temporal check",
+    "inputPayload": {
+      "id": "fill-no-timestamp",
+      "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+      "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+      "source": "fills",
+      "sourceId": "fill-no-timestamp",
+      "data": {
+        "price": 0.65,
+        "size": 10,
+        "side": "YES"
+      }
+    },
+    "systemOutcome": "ACCEPTED",
+    "details": "ScopeGate verdict state: ACCEPT. (Note: ScopeGate checks timestamp when present; market-level identity remains matched)",
+    "isSafe": true
+  },
+  {
+    "vector": "TEMPORAL_EXACT_BOUNDARIES",
+    "description": "Evaluating exact inclusive bounds [tradingStart, expiry] vs t-1 and t+1",
+    "inputPayload": [
+      {
+        "id": "fill-pre-start",
+        "timestamp": 1789047179,
+        "state": "REJECT",
+        "reason": "REFUSED: 1 evidence item(s) failed provenance & temporal validation. Offending codes: TEMPORAL_OUT_OF_BOUNDS"
+      },
+      {
+        "id": "fill-at-start",
+        "timestamp": 1789047180,
+        "state": "ACCEPT",
+        "reason": "ACCEPTED: All 1 evidence item(s) strictly match market 0x0000000000000000000000000000000000000000000000000000000000019262 window [1789047180, 1789047240]"
+      },
+      {
+        "id": "fill-at-expiry",
+        "timestamp": 1789047240,
+        "state": "ACCEPT",
+        "reason": "ACCEPTED: All 1 evidence item(s) strictly match market 0x0000000000000000000000000000000000000000000000000000000000019262 window [1789047180, 1789047240]"
+      },
+      {
+        "id": "fill-post-expiry",
+        "timestamp": 1789047241,
+        "state": "REJECT",
+        "reason": "REFUSED: 1 evidence item(s) failed provenance & temporal validation. Offending codes: TEMPORAL_OUT_OF_BOUNDS"
+      }
+    ],
+    "systemOutcome": "PASSED",
+    "details": "t=1789047179 (start-1) -> REJECT; t=1789047180 (start) -> ACCEPT; t=1789047240 (expiry) -> ACCEPT; t=1789047241 (expiry+1) -> REJECT.",
+    "isSafe": true
+  },
+  {
+    "vector": "CROSS_EPOCH_POOL_REPLAY_RACE",
+    "description": "Replaying valid Market A execution seal against successor Market B sharing the exact same pool",
+    "inputPayload": {
+      "sealMarket": "0x0000000000000000000000000000000000000000000000000000000000019262",
+      "targetMarket": "0x0000000000000000000000000000000000000000000000000000000000019265"
+    },
+    "systemOutcome": "REFUSED",
+    "details": "Replay validity: false. Rejection reasons: Receipt hash mismatch: seal has 0x677dc6f8b056b7224b1f7ebfe577054feec3ed08d91a4216d3a62256e4373196, receipt has 0x16b24c443adad87097dc3252f07b831ea7da121556bb387c0e3900dc91d25962; Market ID mismatch: seal targets 0x0000000000000000000000000000000000000000000000000000000000019262, receipt targets 0x0000000000000000000000000000000000000000000000000000000000019265",
+    "isSafe": true
+  },
+  {
+    "vector": "CANONICAL_HASH_INVARIANCE",
+    "description": "Verifying that unordered JSON object keys do not break receipt verification",
+    "inputPayload": {
+      "original": {
+        "evidenceHash": "0xcb8136e079f44b8d6836313803384a2201859007dcea895f07a62036d9552196",
+        "marketIdentityHash": "0x2069c42a797723abfe267434c142c3c13f53adc9ee73a02c406e36a5fd2e81ee",
+        "receiptHash": "0x677dc6f8b056b7224b1f7ebfe577054feec3ed08d91a4216d3a62256e4373196"
+      },
+      "permuted": {
+        "receiptHash": "0x677dc6f8b056b7224b1f7ebfe577054feec3ed08d91a4216d3a62256e4373196",
+        "marketIdentityHash": "0x2069c42a797723abfe267434c142c3c13f53adc9ee73a02c406e36a5fd2e81ee",
+        "evidenceHash": "0xcb8136e079f44b8d6836313803384a2201859007dcea895f07a62036d9552196"
+      }
+    },
+    "systemOutcome": "PASSED",
+    "details": "Verification: true. Canonicalization correctly sorts keys prior to Keccak-256 computation.",
+    "isSafe": true
+  }
+]
