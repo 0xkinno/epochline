@@ -1,0 +1,11 @@
+{
+  "network": "Somnia Shannon Testnet",
+  "chainId": 50312,
+  "contractName": "EpochlineRegistry",
+  "address": "0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5",
+  "transactionHash": "0x108befe5b3f2823f070438ac5af90cc84243e1428d40d165c4c21813e240bb45",
+  "blockNumber": 485361705,
+  "gasUsed": "6459578",
+  "deployer": "0xe4B713e3cF2E550147f9cc09d751f276E7B9A64e",
+  "timestamp": "2026-09-11T06:50:28.972Z"
+}

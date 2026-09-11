@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #F4F3EE;
+  --surface: #FBFAF7;
+  --surface-2: #F0EFEA;
+  --ink: #141512;
+  --muted: #77776F;
+  --line: #D8D7CF;
+  --line-strong: #B7B6AD;
+  --accent: #1D7459;
+  --accent-soft: rgba(29, 116, 89, 0.10);
+  --danger: #B74B3E;
+  --danger-soft: rgba(183, 75, 62, 0.10);
+  --warning: #A56B19;
+  --warning-soft: rgba(165, 107, 25, 0.10);
+  --proof: #4D628E;
+  --proof-soft: rgba(77, 98, 142, 0.10);
+}
+
+.dark {
+  --canvas: #080A09;
+  --surface: #0E1110;
+  --surface-2: #131716;
+  --ink: #F4F5F1;
+  --muted: #9A9D97;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --accent: #66E3AE;
+  --accent-soft: rgba(102, 227, 174, 0.12);
+  --danger: #FF776B;
+  --danger-soft: rgba(255, 119, 107, 0.11);
+  --warning: #E7B75E;
+  --warning-soft: rgba(231, 183, 94, 0.11);
+  --proof: #8EA6E8;
+  --proof-soft: rgba(142, 166, 232, 0.12);
+}
+
+body {
+  color: var(--ink);
+  background-color: var(--canvas);
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+/* Semantic Card Hover Glows */
+.glow-accent {
+  transition: all 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glow-accent:hover {
+  box-shadow: 0 16px 50px var(--accent-soft), 0 0 0 1px var(--accent);
+}
+
+.glow-danger {
+  transition: all 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glow-danger:hover {
+  box-shadow: 0 16px 50px var(--danger-soft), 0 0 0 1px var(--danger);
+}
+
+.glow-proof {
+  transition: all 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glow-proof:hover {
+  box-shadow: 0 16px 50px var(--proof-soft), 0 0 0 1px var(--proof);
+}
+
+.glow-warning {
+  transition: all 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glow-warning:hover {
+  box-shadow: 0 16px 50px var(--warning-soft), 0 0 0 1px var(--warning);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--line-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-09-10T14:00:11.535Z",
+  "benchmark": "EPOCHLINE Provenance Invariant vs Naive & Control",
+  "targetMarket": {
+    "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+    "symbol": "ETH 60s",
+    "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f"
+  },
+  "comparison": [
+    {
+      "pipeline": "Naive Baseline (Pool Keyed)",
+      "inputRows": 20,
+      "acceptedRows": 20,
+      "rejectedRows": 0,
+      "verdict": "ACCEPTED (VULNERABLE)",
+      "vulnerability": "Ingested 10 foreign BTC fills into ETH decision context"
+    },
+    {
+      "pipeline": "Random Removal Control",
+      "inputRows": 10,
+      "acceptedRows": 4,
+      "rejectedRows": 6,
+      "verdict": "REJECT",
+      "vulnerability": "Still contaminated with foreign rows unless accidentally removed"
+    },
+    {
+      "pipeline": "EPOCHLINE Provenance Firewall",
+      "inputRows": 20,
+      "acceptedRows": 10,
+      "rejectedRows": 10,
+      "verdict": "REFUSED (SAFE)",
+      "vulnerability": "Zero contamination allowed; verified cryptographic receipt generated"
+    }
+  ],
+  "invariantVerified": true
+}

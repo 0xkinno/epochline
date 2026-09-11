@@ -1,0 +1,18 @@
+{
+  "experiment": "BASELINE_NAIVE_POOL_INGESTION",
+  "targetMarketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+  "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+  "totalRowsIngested": 20,
+  "distinctMarketIds": [
+    "0x0000000000000000000000000000000000000000000000000000000000019262",
+    "0x000000000000000000000000000000000000000000000000000000000001925d"
+  ],
+  "contaminationDetectedBySystem": false,
+  "metrics": {
+    "calculatedAvgPrice": 0.5135,
+    "yesVolume": 190,
+    "noVolume": 950,
+    "derivedSignal": "BEARISH_NO"
+  },
+  "flaw": "Contaminated with 10 foreign BTC fills from recycled pool window, distorting average price from ~0.64 down to 0.51 and creating an erroneous high-volume signal."
+}

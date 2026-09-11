@@ -1,0 +1,14 @@
+{
+  "experiment": "RANDOM_ROW_REMOVAL_CONTROL",
+  "description": "Removes identical row count (10 rows) at random without identity or temporal criteria.",
+  "retainedRowCount": 10,
+  "retainedTargetRows": 4,
+  "retainedForeignRows": 6,
+  "distinctMarketIds": [
+    "0x000000000000000000000000000000000000000000000000000000000001925d",
+    "0x0000000000000000000000000000000000000000000000000000000000019262"
+  ],
+  "stillContaminated": true,
+  "scopeGateVerdict": "REJECT",
+  "conclusion": "Arbitrary data filtering fails to resolve cross-market contamination. Only deterministic MarketIdentity scoping eliminates foreign provenance."
+}

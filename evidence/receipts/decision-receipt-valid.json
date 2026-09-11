@@ -1,0 +1,176 @@
+{
+  "protocol": "EPOCHLINE",
+  "version": "1.0.0",
+  "state": "VALID",
+  "market": {
+    "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+    "symbol": "ETH 60s",
+    "pool": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+    "tradingStart": "1789047180",
+    "expiry": "1789047240",
+    "capturedAtBlock": "484739551"
+  },
+  "input": {
+    "acceptedCount": 10,
+    "rejectedCount": 0,
+    "acceptedEvidence": [
+      {
+        "id": "legit-eth-fill-1",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047185,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-1",
+        "data": {
+          "price": 0.62,
+          "size": 10,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-2",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047190,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-2",
+        "data": {
+          "price": 0.64,
+          "size": 12,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-3",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047195,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-3",
+        "data": {
+          "price": 0.66,
+          "size": 14,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-4",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047200,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-4",
+        "data": {
+          "price": 0.62,
+          "size": 16,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-5",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047205,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-5",
+        "data": {
+          "price": 0.64,
+          "size": 18,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-6",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047210,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-6",
+        "data": {
+          "price": 0.66,
+          "size": 20,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-7",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047215,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-7",
+        "data": {
+          "price": 0.62,
+          "size": 22,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-8",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047220,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-8",
+        "data": {
+          "price": 0.64,
+          "size": 24,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-9",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047225,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-9",
+        "data": {
+          "price": 0.66,
+          "size": 26,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-10",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047230,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-10",
+        "data": {
+          "price": 0.62,
+          "size": 28,
+          "side": "YES"
+        }
+      }
+    ],
+    "rejectedEvidence": []
+  },
+  "policy": {
+    "ruleset": "market-instance-v1",
+    "policyHash": "0x8495e5dd9466c7a12c325063a73e394698725aa10e37122aa021df99fb959966"
+  },
+  "decision": {
+    "action": "BUY_YES",
+    "confidence": 0.88,
+    "price": 0.64,
+    "rationale": "Clean ETH 60s order flow without cross-window distortion.",
+    "timestamp": 1789048811
+  },
+  "proof": {
+    "evidenceHash": "0x439551b489e57fa6e1de8cc7436387c46b8d19749f95aa86ffea8ac5c5b59834",
+    "marketIdentityHash": "0x2069c42a797723abfe267434c142c3c13f53adc9ee73a02c406e36a5fd2e81ee",
+    "receiptHash": "0xfb8b51922805b0a8c41b51f774d7b4a20463fd1bda8312821f996f4e254c8300"
+  }
+}

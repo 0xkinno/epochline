@@ -1,0 +1,14 @@
+{
+  "network": "Somnia Shannon Testnet",
+  "chainId": 50312,
+  "registryAddress": "0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5",
+  "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+  "receiptHash": "0xfb8b51922805b0a8c41b51f774d7b4a20463fd1bda8312821f996f4e254c8300",
+  "intentHash": "0xfe60454f7cb80c604d3e50440eb8cda103fd0224cd56bbda3590113a5ce528ff",
+  "executionHash": "0xfe60454f7cb80c604d3e50440eb8cda103fd0224cd56bbda3590113a5ce528ff",
+  "transactionHash": "0xff8004ae6e4c87396e985cb2ef9ae35df937fa70bb5c9f8dc4cdbadb77209bf7",
+  "blockNumber": 485365868,
+  "gasUsed": "2090921",
+  "signer": "0xe4B713e3cF2E550147f9cc09d751f276E7B9A64e",
+  "timestamp": "2026-09-11T06:57:24.533Z"
+}

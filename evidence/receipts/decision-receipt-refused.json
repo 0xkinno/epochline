@@ -1,0 +1,357 @@
+{
+  "protocol": "EPOCHLINE",
+  "version": "1.0.0",
+  "state": "REFUSED",
+  "market": {
+    "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+    "symbol": "ETH 60s",
+    "pool": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+    "tradingStart": "1789047180",
+    "expiry": "1789047240",
+    "capturedAtBlock": "484739551"
+  },
+  "input": {
+    "acceptedCount": 10,
+    "rejectedCount": 10,
+    "acceptedEvidence": [
+      {
+        "id": "legit-eth-fill-1",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047185,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-1",
+        "data": {
+          "price": 0.62,
+          "size": 10,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-2",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047190,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-2",
+        "data": {
+          "price": 0.64,
+          "size": 12,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-3",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047195,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-3",
+        "data": {
+          "price": 0.66,
+          "size": 14,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-4",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047200,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-4",
+        "data": {
+          "price": 0.62,
+          "size": 16,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-5",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047205,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-5",
+        "data": {
+          "price": 0.64,
+          "size": 18,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-6",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047210,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-6",
+        "data": {
+          "price": 0.66,
+          "size": 20,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-7",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047215,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-7",
+        "data": {
+          "price": 0.62,
+          "size": 22,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-8",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047220,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-8",
+        "data": {
+          "price": 0.64,
+          "size": 24,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-9",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047225,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-9",
+        "data": {
+          "price": 0.66,
+          "size": 26,
+          "side": "YES"
+        }
+      },
+      {
+        "id": "legit-eth-fill-10",
+        "marketId": "0x0000000000000000000000000000000000000000000000000000000000019262",
+        "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+        "blockNumber": 484739551,
+        "timestamp": 1789047230,
+        "source": "fills",
+        "sourceId": "legit-eth-fill-10",
+        "data": {
+          "price": 0.62,
+          "size": 28,
+          "side": "YES"
+        }
+      }
+    ],
+    "rejectedEvidence": [
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-1",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047065,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-1",
+          "data": {
+            "price": 0.35,
+            "size": 50,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-2",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047070,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-2",
+          "data": {
+            "price": 0.38,
+            "size": 60,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-3",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047075,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-3",
+          "data": {
+            "price": 0.41,
+            "size": 70,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-4",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047080,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-4",
+          "data": {
+            "price": 0.43999999999999995,
+            "size": 80,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-5",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047085,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-5",
+          "data": {
+            "price": 0.35,
+            "size": 90,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-6",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047090,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-6",
+          "data": {
+            "price": 0.38,
+            "size": 100,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-7",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047095,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-7",
+          "data": {
+            "price": 0.41,
+            "size": 110,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-8",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047100,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-8",
+          "data": {
+            "price": 0.43999999999999995,
+            "size": 120,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-9",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047105,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-9",
+          "data": {
+            "price": 0.35,
+            "size": 130,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      },
+      {
+        "evidence": {
+          "id": "foreign-btc-fill-10",
+          "marketId": "0x000000000000000000000000000000000000000000000000000000000001925d",
+          "poolAddress": "0xCb9cE35Fba1329e22c4dC3E4FF93aCd9c0a2AE2f",
+          "blockNumber": 484739551,
+          "timestamp": 1789047110,
+          "source": "fills",
+          "sourceId": "foreign-btc-fill-10",
+          "data": {
+            "price": 0.38,
+            "size": 140,
+            "side": "NO"
+          }
+        },
+        "reason": "Market ID mismatch: item belongs to 0x000000000000000000000000000000000000000000000000000000000001925d, expected target market 0x0000000000000000000000000000000000000000000000000000000000019262",
+        "code": "MARKET_MISMATCH"
+      }
+    ]
+  },
+  "policy": {
+    "ruleset": "market-instance-v1",
+    "policyHash": "0x8495e5dd9466c7a12c325063a73e394698725aa10e37122aa021df99fb959966"
+  },
+  "decision": {
+    "action": "REFUSE",
+    "confidence": 0,
+    "price": 0,
+    "rationale": "REFUSED: 10 evidence item(s) failed provenance & temporal validation. Offending codes: MARKET_MISMATCH",
+    "timestamp": 1789048811
+  },
+  "proof": {
+    "evidenceHash": "0x439551b489e57fa6e1de8cc7436387c46b8d19749f95aa86ffea8ac5c5b59834",
+    "marketIdentityHash": "0x2069c42a797723abfe267434c142c3c13f53adc9ee73a02c406e36a5fd2e81ee",
+    "receiptHash": "0xdc963734592004b542965867a5f98291226c0021a8b790326bc2114b23e5dd86"
+  }
+}

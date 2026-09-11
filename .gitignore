@@ -1,0 +1,31 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Research & Competitor References (Strictly Ignored)
+research/
+reference/
+
+# Next.js & Build Outputs
+.next/
+out/
+build/
+dist/
+coverage/
+.turbo/
+
+# Logs & Temporary Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+tsconfig.tsbuildinfo
+
