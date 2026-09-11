@@ -33,9 +33,10 @@ H_M = \text{Keccak256}(\text{Canonicalize}(\text{MarketIdentity}))
 $$
 
 ### Policy Hash ($H_P$)
+Deterministic Keccak-256 hash over canonical policy ruleset identifier (`"EPOCHLINE_POLICY_market-instance-v1"`):
 
 $$
-H_P = \text{Keccak256}(\text{"EPOCHLINE\_POLICY\_market-instance-v1"})
+H_P = \text{Keccak256}(\text{PolicyRuleset})
 $$
 
 ### Receipt Hash ($H_R$)
