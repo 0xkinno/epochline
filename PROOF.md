@@ -26,7 +26,7 @@ Deterministic Keccak-256 hash over canonical `MarketIdentity` fields:
 $$H_M = \text{Keccak256}(\text{Canonicalize}(\text{MarketIdentity}))$$
 
 ### Policy Hash ($H_P$)
-$$H_P = \text{Keccak256}(\text{"EPOCHLINE\_POLICY\_market-instance-v1"})$$
+$$H_P = \operatorname{Keccak256}(\texttt{"EPOCHLINE\_POLICY\_market-instance-v1"})$$
 
 ### Receipt Hash ($H_R$)
 $$H_R = \text{Keccak256}(\text{Canonicalize}(\{ \text{Protocol}, \text{State}, \text{Market}, H_E, H_M, H_P, \text{Decision} \}))$$
@@ -88,3 +88,17 @@ Verification Summary: 30/30 checks PASSED.
 -------------------------------------------------
 >>> ALL AUDIT CHECKS PASSED. GATE C & D VERIFIED. <<<
 ```
+
+---
+
+## 5. Live Testnet & Deployment Ground Truth
+
+- **Live Application**: [https://epochline.vercel.app](https://epochline.vercel.app)
+- **Provenance Lab**: [https://epochline.vercel.app/lab](https://epochline.vercel.app/lab)
+- **Proof & Audit Console**: [https://epochline.vercel.app/proof](https://epochline.vercel.app/proof)
+- **Somnia Shannon Testnet**: Chain ID `50312` (Block `#485365868`)
+- **EpochlineRegistry Contract**: [`0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5`](https://shannon-explorer.somnia.network/address/0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5)
+- **Decision Receipt Anchor**: [`0x519aed15d65c54a40a59e9b5149bac1509b83e21529a2d6251ef8440129a725e`](https://shannon-explorer.somnia.network/tx/0x519aed15d65c54a40a59e9b5149bac1509b83e21529a2d6251ef8440129a725e)
+- **Execution Seal Anchor**: [`0xff8004ae6e4c87396e985cb2ef9ae35df937fa70bb5c9f8dc4cdbadb77209bf7`](https://shannon-explorer.somnia.network/tx/0xff8004ae6e4c87396e985cb2ef9ae35df937fa70bb5c9f8dc4cdbadb77209bf7)
+- **OracleHub Contract**: [`0xe40db387cC98601Dd11bd634fF2f3AD5686dE32b`](https://shannon-explorer.somnia.network/address/0xe40db387cC98601Dd11bd634fF2f3AD5686dE32b)
+

@@ -6,6 +6,9 @@ This document records the empirical evidence captured live on **Somnia Shannon T
 
 ## 1. Testnet Ground Truth & Target Market
 
+- **Live App**: [https://epochline.vercel.app](https://epochline.vercel.app)
+- **Provenance Lab**: [https://epochline.vercel.app/lab](https://epochline.vercel.app/lab)
+- **Proof Center**: [https://epochline.vercel.app/proof](https://epochline.vercel.app/proof)
 - **Network**: Somnia Shannon Testnet
 - **Chain ID**: `50312`
 - **Captured Block**: `#484739551`

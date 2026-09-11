@@ -12,7 +12,7 @@
 >
 > **EPOCHLINE makes market identity part of the execution boundary: contaminated evidence is rejected before a wallet-signed order can execute.**
 
-![EPOCHLINE](public/hero.jpg)
+![EPOCHLINE](evidence/screenshots/landing-preview.png)
 
 ## Review This First
 
@@ -24,15 +24,17 @@
 | **[Cryptographic Proof](PROOF.md)** | Receipt → intent → execution → on-chain anchor |
 | **[Independent Verifier](PROOF.md)** | Reproducible verification of evidence and hashes |
 
-### Live deployment
+### Live Deployment & Testnet Proofs
 
 | Resource | Destination |
 |---|---|
-| App | `<VERCEL_URL>` |
-| Provenance Lab | `<VERCEL_URL>/lab` |
-| Proof Center | `<VERCEL_URL>/proof` |
-| EpochlineRegistry | [`0x029192f4...13c5`](https://shannon-explorer.somnia.network/address/0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5) |
-| Decision Anchor | [`0x519aed15...725e`](https://shannon-explorer.somnia.network/tx/0x519aed15d65c54a40a59e9b5149bac1509b83e21529a2d6251ef8440129a725e) |
+| **Live Web App** | [https://epochline.vercel.app](https://epochline.vercel.app) |
+| **Provenance Lab** | [https://epochline.vercel.app/lab](https://epochline.vercel.app/lab) |
+| **Proof & Audit Center** | [https://epochline.vercel.app/proof](https://epochline.vercel.app/proof) |
+| **EpochlineRegistry Contract** | [`0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5`](https://shannon-explorer.somnia.network/address/0x029192f49d95ed5b147ce7e6fc18d01bdfb513c5) |
+| **Decision Receipt Anchor** | [`0x519aed15d65c54a40a59e9b5149bac1509b83e21529a2d6251ef8440129a725e`](https://shannon-explorer.somnia.network/tx/0x519aed15d65c54a40a59e9b5149bac1509b83e21529a2d6251ef8440129a725e) |
+| **Execution Seal Anchor** | [`0xff8004ae6e4c87396e985cb2ef9ae35df937fa70bb5c9f8dc4cdbadb77209bf7`](https://shannon-explorer.somnia.network/tx/0xff8004ae6e4c87396e985cb2ef9ae35df937fa70bb5c9f8dc4cdbadb77209bf7) |
+| **OracleHub Contract** | [`0xe40db387cC98601Dd11bd634fF2f3AD5686dE32b`](https://shannon-explorer.somnia.network/address/0xe40db387cC98601Dd11bd634fF2f3AD5686dE32b) |
 
 ## The Problem
 

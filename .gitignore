@@ -30,3 +30,10 @@ Thumbs.db
 tsconfig.tsbuildinfo
 
 .vercel
+
+# Video Artifacts & Media Generation
+video/
+EPOCHLINE_2m40_MASTER_PRODUCTION_PROMPT.md
+EPOCHLINE_2m35_VOICEOVER.md
+__pycache__/
+*.pyc
