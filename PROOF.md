@@ -5,13 +5,14 @@
 > **A decision is VALID only when every piece of market-derived evidence belongs to the exact target canonical `marketId`, matches the registered pool and venue, and lies strictly within the target market's valid temporal window.**
 
 Mathematically:
-$$\forall e \in \mathcal{E}_{\text{accepted}}, \quad \text{marketId}(e) = \text{marketId}_{\text{target}} \quad \land \quad t(e) \in [t_{\text{start}}, t_{\text{expiry}}] \quad \land \quad \text{pool}(e) = \text{pool}_{\text{target}}$$
 
-$$\text{State} = \begin{cases} 
-\text{VALID} & \text{if } |\mathcal{E}_{\text{offending}}| = 0 \land |\mathcal{E}_{\text{accepted}}| > 0 \land \text{Status}_{\text{onchain}} = 1 \\ 
-\text{REFUSED} & \text{if } |\mathcal{E}_{\text{offending}}| > 0 \lor \text{Status}_{\text{onchain}} \neq 1 \\ 
-\text{INCOMPLETE} & \text{if } |\mathcal{E}| = 0 
-\end{cases}$$
+$$
+\forall e \in \mathcal{E}_{\text{accepted}}, \quad \text{marketId}(e) = \text{marketId}_{\text{target}} \quad \land \quad t(e) \in [t_{\text{start}}, t_{\text{expiry}}] \quad \land \quad \text{pool}(e) = \text{pool}_{\text{target}}
+$$
+
+$$
+\text{State} = \begin{cases} \text{VALID} & \text{if } |\mathcal{E}_{\text{offending}}| = 0 \land |\mathcal{E}_{\text{accepted}}| > 0 \land \text{Status}_{\text{onchain}} = 1 \\ \text{REFUSED} & \text{if } |\mathcal{E}_{\text{offending}}| > 0 \lor \text{Status}_{\text{onchain}} \neq 1 \\ \text{INCOMPLETE} & \text{if } |\mathcal{E}| = 0 \end{cases}
+$$
 
 ---
 
@@ -19,17 +20,29 @@ $$\text{State} = \begin{cases}
 
 ### Evidence Hash ($H_E$)
 Deterministic Keccak-256 hash over sorted, canonicalized JSON representation of accepted evidence items:
-$$H_E = \text{Keccak256}(\text{Canonicalize}(\mathcal{E}_{\text{accepted}}))$$
+
+$$
+H_E = \text{Keccak256}(\text{Canonicalize}(\mathcal{E}_{\text{accepted}}))
+$$
 
 ### Market Identity Hash ($H_M$)
 Deterministic Keccak-256 hash over canonical `MarketIdentity` fields:
-$$H_M = \text{Keccak256}(\text{Canonicalize}(\text{MarketIdentity}))$$
+
+$$
+H_M = \text{Keccak256}(\text{Canonicalize}(\text{MarketIdentity}))
+$$
 
 ### Policy Hash ($H_P$)
-$$H_P = \operatorname{Keccak256}(\texttt{"EPOCHLINE\_POLICY\_market-instance-v1"})$$
+
+$$
+H_P = \text{Keccak256}(\text{"EPOCHLINE\_POLICY\_market-instance-v1"})
+$$
 
 ### Receipt Hash ($H_R$)
-$$H_R = \text{Keccak256}(\text{Canonicalize}(\{ \text{Protocol}, \text{State}, \text{Market}, H_E, H_M, H_P, \text{Decision} \}))$$
+
+$$
+H_R = \text{Keccak256}(\text{Canonicalize}(\{ \text{Protocol}, \text{State}, \text{Market}, H_E, H_M, H_P, \text{Decision} \}))
+$$
 
 ---
 
