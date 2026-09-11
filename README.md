@@ -28,6 +28,7 @@
 
 | Resource | Destination |
 |---|---|
+| **Youtube Video** | [Watch on Youtube](https://youtu.be/oR07d3uEICk?si=pUqanvV5boF8VAEZ) |
 | **Live Web App** | [https://epochline.vercel.app](https://epochline.vercel.app) |
 | **Provenance Lab** | [https://epochline.vercel.app/lab](https://epochline.vercel.app/lab) |
 | **Proof & Audit Center** | [https://epochline.vercel.app/proof](https://epochline.vercel.app/proof) |
