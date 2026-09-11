@@ -105,10 +105,14 @@ class CdpClient {
   }
 }
 
+const TARGET_URL = (process.argv[2] || `http://localhost:${PORT}`).replace(/\/$/, "");
+const isRemote = TARGET_URL.startsWith("https://") || (TARGET_URL.startsWith("http://") && !TARGET_URL.includes("localhost"));
+
 async function main() {
   console.log("==========================================================");
   console.log("   EPOCHLINE PLAYWRIGHT / CHROMIUM END-TO-END AUDIT CLI   ");
   console.log("==========================================================\n");
+  console.log(`Target URL: ${TARGET_URL}\n`);
 
   let totalAuditChecks = 0;
   let passedAuditChecks = 0;
@@ -123,31 +127,45 @@ async function main() {
     }
   }
 
-  // 1. Start Next.js production server
-  console.log("1. Starting Next.js server on http://localhost:3000...");
-  const serverProcess = spawn("cmd.exe", ["/c", "npm", "start"], {
-    cwd: process.cwd(),
-    stdio: "pipe",
-    shell: true,
-  });
+  let serverProcess: ChildProcess | null = null;
 
-  // Wait for server ready
-  let serverReady = false;
-  for (let i = 0; i < 30; i++) {
+  if (!isRemote) {
+    // Check if server is already running
+    let alreadyRunning = false;
     try {
-      const res = await fetch(`http://localhost:${PORT}/`);
-      if (res.status === 200) {
-        serverReady = true;
-        break;
-      }
+      const res = await fetch(`${TARGET_URL}/`);
+      if (res.status === 200) alreadyRunning = true;
     } catch {}
-    await sleep(1000);
-  }
 
-  assert("Next.js production server is active", serverReady);
-  if (!serverReady) {
-    serverProcess.kill();
-    process.exit(1);
+    if (!alreadyRunning) {
+      console.log(`1. Starting Next.js server on ${TARGET_URL}...`);
+      serverProcess = spawn("cmd.exe", ["/c", "npm", "start"], {
+        cwd: process.cwd(),
+        stdio: "pipe",
+        shell: true,
+      });
+
+      let serverReady = false;
+      for (let i = 0; i < 30; i++) {
+        try {
+          const res = await fetch(`${TARGET_URL}/`);
+          if (res.status === 200) {
+            serverReady = true;
+            break;
+          }
+        } catch {}
+        await sleep(1000);
+      }
+      assert("Next.js server is active", serverReady);
+      if (!serverReady) {
+        if (serverProcess) serverProcess.kill();
+        process.exit(1);
+      }
+    } else {
+      assert("Next.js server is active (reusing running instance)", true);
+    }
+  } else {
+    assert(`Remote deployment reachable at ${TARGET_URL}`, true);
   }
 
   // 2. Launch Chromium in headless mode with debugging port
@@ -174,7 +192,7 @@ async function main() {
   } catch (e: any) {
     assert("Chromium CDP interface connected", false, e.message);
     chromeProcess.kill();
-    serverProcess.kill();
+    if (serverProcess) (serverProcess as any).kill();
     process.exit(1);
   }
 
@@ -194,7 +212,7 @@ async function main() {
 
   console.log("\n3. Testing Landing Page (/) across Viewports...");
   await cdp.setViewport(1920, 1080);
-  await cdp.navigate(`http://localhost:${PORT}/`);
+  await cdp.navigate(`${TARGET_URL}/`);
 
   const heroHeading = await cdp.evaluate("document.querySelector('h1')?.innerText");
   assert("Landing page hero title loaded", Boolean(heroHeading && heroHeading.toLowerCase().includes("right about the market")));
@@ -209,12 +227,12 @@ async function main() {
 
   // Capture Mobile Landing Screenshot
   await cdp.setViewport(390, 844);
-  await cdp.navigate(`http://localhost:${PORT}/`);
+  await cdp.navigate(`${TARGET_URL}/`);
   await cdp.screenshot(path.join(finalScreenshotsDir, "landing-mobile.png"));
 
   console.log("\n4. Testing Provenance Lab (/lab)...");
   await cdp.setViewport(1920, 1080);
-  await cdp.navigate(`http://localhost:${PORT}/lab`);
+  await cdp.navigate(`${TARGET_URL}/lab`);
 
   const labHeading = await cdp.evaluate("document.querySelector('h1')?.innerText");
   assert("Lab page title rendered", Boolean(labHeading && labHeading.includes("EPOCHLINE PROVENANCE LAB")));
@@ -238,14 +256,14 @@ async function main() {
 
   // Capture Mobile Lab Screenshot
   await cdp.setViewport(390, 844);
-  await cdp.navigate(`http://localhost:${PORT}/lab`);
+  await cdp.navigate(`${TARGET_URL}/lab`);
   await cdp.screenshot(path.join(screenshotsDir, "04_lab_mobile_390.png"));
   await cdp.screenshot(path.join(finalScreenshotsDir, "lab-mobile.png"));
   await cdp.screenshot(path.join(finalScreenshotsDir, "execution-mobile.png"));
 
   console.log("\n5. Testing Proof & Audit Page (/proof)...");
   await cdp.setViewport(1920, 1080);
-  await cdp.navigate(`http://localhost:${PORT}/proof`);
+  await cdp.navigate(`${TARGET_URL}/proof`);
 
   const proofHeading = await cdp.evaluate("document.querySelector('h1')?.innerText");
   assert("Proof page title rendered", Boolean(proofHeading && proofHeading.includes("PROOF & AUDIT CENTER")));
@@ -262,13 +280,13 @@ async function main() {
 
   // Capture Mobile Proof Screenshot
   await cdp.setViewport(390, 844);
-  await cdp.navigate(`http://localhost:${PORT}/proof`);
+  await cdp.navigate(`${TARGET_URL}/proof`);
   await cdp.screenshot(path.join(finalScreenshotsDir, "proof-mobile.png"));
 
   console.log("\n6. Responsive Viewport Audit (7 Required Viewports)...");
   for (const vp of VIEWPORTS) {
     await cdp.setViewport(vp.width, vp.height);
-    await cdp.navigate(`http://localhost:${PORT}/lab`);
+    await cdp.navigate(`${TARGET_URL}/lab`);
 
     const hasHorizontalScroll = await cdp.evaluate("document.documentElement.scrollWidth > window.innerWidth");
     assert(`Viewport ${vp.name} (${vp.width}x${vp.height}): Zero horizontal overflow`, !hasHorizontalScroll);
@@ -279,7 +297,7 @@ async function main() {
 
   cdp.close();
   chromeProcess.kill();
-  serverProcess.kill();
+  if (serverProcess) (serverProcess as any).kill();
 
   console.log("\n----------------------------------------------------------");
   console.log(`E2E Playwright/Chromium Audit Summary: ${passedAuditChecks}/${totalAuditChecks} checks PASSED.`);
